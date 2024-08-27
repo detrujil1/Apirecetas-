@@ -19,7 +19,7 @@ app.get("/api/products/all", (req, res) => {
 });
 
 app.post("/api/products", (req, res) => {
-    // req.query
+    // cascaron 
     const {id, 
          title,
          description,
@@ -27,11 +27,13 @@ app.post("/api/products", (req, res) => {
          instructions, 
          ingredients, 
          nutritionalValues } = req.body;
+        //condicional
     if (!title || !description || !preparation || !instructions || !ingredients || !nutritionalValues) {
         return res.status(400).json({
             message: "Todos los campos son obligatorios."
         });
     }
+    
     const newProduct = {
         id,//products.length + 1, // O usa alguna otra forma de generar IDs únicos
         title,
